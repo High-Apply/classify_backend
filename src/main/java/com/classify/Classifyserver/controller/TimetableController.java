@@ -5,20 +5,23 @@ import com.classify.Classifyserver.repository.ClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
+@RequestMapping(value = "/class")
 public class TimetableController {
 
-    private ClassRepository classRepository;
+    private final ClassRepository classRepository;
     @Autowired
     public TimetableController(ClassRepository classRepository) {
         this.classRepository = classRepository;
     }
 
-    @GetMapping("/class/{timetableId}")
-    public List<Lesson> getClassesByTimetableId(@PathVariable Long timetableId) {
-        return classRepository.findByTimetableId(timetableId);
+    @GetMapping("/{timetable_id}")
+    public List<Lesson> findAll(@PathVariable Long timetable_id) {
+        return classRepository.findByTimetableId(timetable_id);
     }
 }

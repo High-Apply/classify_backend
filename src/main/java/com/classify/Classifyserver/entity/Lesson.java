@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Class_timetable_junction {
+public class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int class_id;
@@ -15,15 +15,6 @@ public class Class_timetable_junction {
     private int weekday;
     private int class_time;
     private String teacher_name;
-    private Long timetableId;
-
-    public Long getTimetableId() {
-        return timetableId;
-    }
-
-    public void setTimetableId(Long timetableId) {
-        this.timetableId = timetableId;
-    }
 
     public int getClass_id() {
         return class_id;
