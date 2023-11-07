@@ -20,8 +20,8 @@ public class TimetableController {
         this.classRepository = classRepository;
     }
 
-    @GetMapping("/{timetable_id}")
-    public List<Lesson> findAll(@PathVariable Long timetable_id) {
-        return classRepository.findByTimetableId(timetable_id);
+    @GetMapping("/{timetable_Id}")
+    public List<Lesson> findAll(@PathVariable Long timetable_Id) {
+        return classRepository.findByTimetableId(timetable_Id);
     }
 }
