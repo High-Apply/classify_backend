@@ -9,20 +9,11 @@ import jakarta.persistence.Id;
 public class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int class_id;
     private String class_name;
     private String classroom;
+    private String teacher_name;
     private int weekday;
     private int class_time;
-    private String teacher_name;
-
-    public int getClass_id() {
-        return class_id;
-    }
-
-    public void setClass_id(int class_id) {
-        this.class_id = class_id;
-    }
 
     public String getClass_name() {
         return class_name;
@@ -38,6 +29,13 @@ public class Lesson {
 
     public void setClassroom(String classroom) {
         this.classroom = classroom;
+    }
+    public String getTeacher_name() {
+        return teacher_name;
+    }
+
+    public void setTeacher_name(String teacher_name) {
+        this.teacher_name = teacher_name;
     }
 
     public int getWeekday() {
@@ -56,11 +54,5 @@ public class Lesson {
         this.class_time = class_time;
     }
 
-    public String getTeacher_name() {
-        return teacher_name;
-    }
 
-    public void setTeacher_name(String teacher_name) {
-        this.teacher_name = teacher_name;
-    }
 }

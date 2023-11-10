@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/class")
+@RequestMapping
 public class TimetableController {
 
     private final ClassRepository classRepository;
@@ -20,7 +20,7 @@ public class TimetableController {
         this.classRepository = classRepository;
     }
 
-    @GetMapping("/{timetable_Id}")
+    @GetMapping("/class/{timetable_Id}")
     public List<Lesson> findAll(@PathVariable Long timetable_Id) {
         return classRepository.findByTimetableId(timetable_Id);
     }
